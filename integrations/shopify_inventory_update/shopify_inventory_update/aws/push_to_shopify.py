@@ -49,8 +49,8 @@ def handler(event, context):
 
     response = get_availability_job_id()
     LOGGER.info('Start of push_to_shopify. Job ID: %s', response)
-    LOGGER.info('Event : %s', json.dumps(event))
-    LOGGER.info('Context : %s', json.dumps(context))
+    LOGGER.info('Event : %s', event)
+    LOGGER.info('Context : %s', context)
 
     if BLOCK_CONCURRENT_EXECUTION:
         if _is_blocked():

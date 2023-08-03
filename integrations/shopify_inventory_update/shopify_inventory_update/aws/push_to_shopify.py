@@ -21,7 +21,7 @@ LOG_LEVEL = logging.DEBUG if LOG_LEVEL_SET.lower() in ['debug'] else logging.INF
 LOGGER.setLevel(LOG_LEVEL)
 BLOCK_CONCURRENT_EXECUTION = bool(os.environ.get('BLOCK_CONCURRENT_EXECUTION', 'False'))
 CONCURRENT_EXECUTION_BLOCKED_KEY = 'concurrent_execution_blocked'
-DYNAMODB_TABLE_NAME = os.environ.get('DYNAMODB_TABLE_NAME', 'frankandoak-availability-job-save-state')
+DYNAMODB_TABLE_NAME = os.environ.get('DYNAMODB_TABLE_NAME', 'frankandoaknew-availability-job-save-state')
 SQS_HANDLER = None
 WORKER_TRIGGER_DEFAULT_NAME = 'shopify_availability_export_worker'
 STOP_BEFORE_TIMEOUT = 180000

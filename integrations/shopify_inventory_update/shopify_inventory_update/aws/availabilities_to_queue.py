@@ -28,7 +28,7 @@ LOGGER.setLevel(LOG_LEVEL)
 
 WORKER_TRIGGER_DEFAULT_NAME = 'availabilities_to_queue_worker'
 MAP_FILE_VARIANTS_SKU = 'sku_to_variant_id_map_dict.json'
-DYNAMODB_TABLE_NAME = 'frankandoak-availability-job-save-state'
+DYNAMODB_TABLE_NAME = 'frankandoaknew-availability-job-save-state'
 DYNAMODB_MAPPING_TABLE_NAME = 'frankandoak-product-inventory-mapping'
 JOB_STATE_KEY = 'current_job_state'
 LAST_VARIANT_KEY = 'last_variant'
@@ -56,8 +56,8 @@ def handler(event, context):
     """
 
     LOGGER.info('Start of availablities_to_queue')
-    LOGGER.info('Event: %s', json.dumps(event))
-    LOGGER.info('Context: %s', json.dumps(context))
+    LOGGER.info('Event: %s', event)
+    LOGGER.info('Context: %s', context)
 
     if BLOCK_CONCURRENT_EXECUTION:
         if _is_blocked():

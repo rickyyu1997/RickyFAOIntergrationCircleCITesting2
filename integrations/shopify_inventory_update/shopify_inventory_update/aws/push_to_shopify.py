@@ -86,6 +86,9 @@ async def _sync_inventory(loop, context):
 
     for shop_id in shop_manager.get_shop_ids():
         shopify_config = shop_manager.get_shop_config(shop_id)
+        LOGGER.info('[debug] shop_id : %s', shop_id)
+        LOGGER.info('[debug] shopify_config : %s', shopify_config)
+        LOGGER.info('[debug] shopify_config username: %s', shopify_config['username'])
 
         shopify_connectors[shopify_config['currency']] = ShopifyConnector(
             shopify_config['username'],
